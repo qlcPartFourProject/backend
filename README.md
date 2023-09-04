@@ -9,12 +9,11 @@ pip install virtualenv
 cd backend
 
 # Create the virtual environment (only do in first install)
-python -m venv env
+py -m venv .venv
 
 # Activate the virtual environment
-source env/Scripts/activate
-env/Scripts/activate.bat 
-
+source .venv\scripts\activate
+.venv\scripts\activate
 
 ### In venv
 # Install dependencies (only do in first install)

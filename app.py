@@ -14,6 +14,7 @@ from src.controllers.quiz.quiz_list_controller import QuizListController
 from src.controllers.quiz.quiz_controller import QuizController
 from src.controllers.survey.survey_controller import SurveyController
 from src.controllers.test.test_controller import TestController
+from src.controllers.feedback.feedback_controller import FeedbackController
 
 from flask import make_response, request
 
@@ -25,14 +26,8 @@ db = firestore.client()
 
 # init flask server
 app = Flask(__name__, static_url_path='', static_folder='frontend/build')
-# CORS(app) #comment this on deployment
+CORS(app) #comment this on deployment
 api = Api(app)
-
-# @app.route("/", defaults={'path':''})
-# def serve(path):
-#     return send_from_directory(app.static_folder,'index.html')
-
-# @app.route('/*', methods=["GET", "OPTIONS"])
 
 @app.route('/', defaults={'u_path': ''}, methods=["GET", "OPTIONS"])
 @app.route('/<path:u_path>', methods=["GET", "OPTIONS"])
@@ -58,11 +53,10 @@ def _corsify_actual_response(response):
     response.headers.add("Access-Control-Allow-Origin", "*")
     return response
 
-
-
 api.add_resource(ProgramController, '/api/program/<id>')
 api.add_resource(UserController, '/api/user/<id>')
 api.add_resource(QuizListController, '/api/quiz')
 api.add_resource(QuizController, '/api/quiz/<id>')
 api.add_resource(SurveyController, '/api/survey/<id>')
+api.add_resource(FeedbackController, '/api/feedback/<id>')
 api.add_resource(TestController, '/api/test')
