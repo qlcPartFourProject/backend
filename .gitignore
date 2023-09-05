@@ -130,3 +130,5 @@ dmypy.json
 
 # firebase
 qlcs-part-4-project-firebase-adminsdk-*-*.json
+
+temp/
