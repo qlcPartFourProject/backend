@@ -17,6 +17,10 @@ class LineAtEndOfLoopQuestion(Question):
             if not hasattr(AstUtil.get_lines(loop)[-1], "body"):
                 valid_loops.append(loop)
 
+        for loop in self.astUtil.getWhileNodes():
+            if not hasattr(AstUtil.get_lines(loop)[-1], "body"):
+                valid_loops.append(loop)
+
         # loop to quiz on
         self.node = random.choice(valid_loops)
 
