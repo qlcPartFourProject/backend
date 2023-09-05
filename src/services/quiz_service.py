@@ -18,6 +18,7 @@ from lib.qlc_generator.questions.NumberOfFunctionParametersQuestion import Numbe
 from lib.qlc_generator.questions.FunctionVariableNameListQuestion import FunctionVariableNameListQuestion
 from lib.qlc_generator.questions.NumberOfFunctionLoopsQuestion import NumberOfFunctionLoopsQuestion
 from lib.qlc_generator.questions.LineInSameLoopQuestion import LineInSameLoopQuestion
+from lib.qlc_generator.questions.LineInSameConditionalQuestion import LineInSameConditionalQuestion
 
 
 from src.models.quiz import Submission
@@ -87,7 +88,8 @@ def create_quiz(program_id, file_content):
             #  NumberOfFunctionParametersQuestion,
             #  FunctionVariableNameListQuestion,
             #  NumberOfFunctionLoopsQuestion,
-             LineInSameLoopQuestion
+             LineInSameLoopQuestion,
+             LineInSameConditionalQuestion
         ]
 
         generated_questions = []

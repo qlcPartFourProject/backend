@@ -13,6 +13,11 @@ def function_one(param_one_f1, param_two_f1, param_three_f1, param_four_f1):
         var13 = 13
         var14 = 14
 
+    if var10 == var11:
+        print('a')
+        print('b')
+        print('c')
+
     while var1 < var2: pass
         
 def function_two(param_one_f2, param_two_f2, param_three_f2):
