@@ -1,5 +1,5 @@
 import string
-from answers.Answer import Answer
+from lib.qlc_generator.answers.Answer import Answer
 
 class AnswerOptions: 
     def __init__(self, answers: list[Answer]):

@@ -1,5 +1,5 @@
 import re
-from questions.Question import Question
+from lib.qlc_generator.questions.Question import Question
 
 class QuestionSeries:
     def __init__(self, questions: list[Question]):
