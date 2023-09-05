@@ -78,16 +78,16 @@ def create_quiz(program_id, file_content):
         question_generator = QuestionGenerator(analyzer.astUtil)
 
         question_types = [
-            #  FunctionNameQuestion,
-            #  FunctionParameterListQuestion,
+             FunctionNameQuestion,
+             FunctionParameterListQuestion,
              LineAtEndOfLoopQuestion,
-            #  DoesFunctionHaveDependenciesQuestion,
-            #  NumberOfFunctionDependenciesQuestion,
-            #  FunctionDependencyListQuestion,
-            #  IsFunctionRecursiveQuestion,
-            #  NumberOfFunctionParametersQuestion,
-            #  FunctionVariableNameListQuestion,
-            #  NumberOfFunctionLoopsQuestion,
+             DoesFunctionHaveDependenciesQuestion,
+             NumberOfFunctionDependenciesQuestion,
+             FunctionDependencyListQuestion,
+             IsFunctionRecursiveQuestion,
+             NumberOfFunctionParametersQuestion,
+             FunctionVariableNameListQuestion,
+             NumberOfFunctionLoopsQuestion,
              LineInSameLoopQuestion,
              LineInSameConditionalQuestion
         ]
