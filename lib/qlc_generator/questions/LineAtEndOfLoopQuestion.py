@@ -34,12 +34,14 @@ class LineAtEndOfLoopQuestion(Question):
         # every line in the loop, except the last one
         for line in AstUtil.get_lines(self.node)[:-1]:
             lineText = decompile(line).partition("\n")[0]
-            distractorPool.append(Answer(lineText, False))
+            if lineText != self.correct_answer.get_answer_value:
+                distractorPool.append(Answer(lineText, False))
 
         parent = self.node.parent
         for line in AstUtil.get_lines(parent):
             lineText = decompile(line).partition("\n")[0]
-            distractorPool.append(Answer(lineText, False))
+            if lineText != self.correct_answer.get_answer_value:
+                distractorPool.append(Answer(lineText, False))
 
         self.distractor_pool = distractorPool
     
