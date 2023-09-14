@@ -26,4 +26,4 @@ class NumberOfFunctionVariablesQuestion(Question):
         self.distractor_pool = list(map(create_distractor_answer, distractor_pool))
 
     def create_question_text(self):
-        self.text =  "How many parameters does function " + str(self.node.name) + " have?"
+        self.text =  "How many variables does function " + str(self.node.name) + " have?"

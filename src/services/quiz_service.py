@@ -17,6 +17,9 @@ from lib.qlc_generator.questions.IsFunctionRecursiveQuestion import IsFunctionRe
 from lib.qlc_generator.questions.NumberOfFunctionParametersQuestion import NumberOfFunctionParametersQuestion
 from lib.qlc_generator.questions.FunctionVariableNameListQuestion import FunctionVariableNameListQuestion
 from lib.qlc_generator.questions.NumberOfFunctionLoopsQuestion import NumberOfFunctionLoopsQuestion
+from lib.qlc_generator.questions.LineInSameLoopQuestion import LineInSameLoopQuestion
+from lib.qlc_generator.questions.LineInSameConditionalQuestion import LineInSameConditionalQuestion
+
 
 from src.models.quiz import Submission
 from src.dtos.quiz.create_submission import CreateSubmission
@@ -84,7 +87,9 @@ def create_quiz(program_id, file_content):
              IsFunctionRecursiveQuestion,
              NumberOfFunctionParametersQuestion,
              FunctionVariableNameListQuestion,
-             NumberOfFunctionLoopsQuestion
+             NumberOfFunctionLoopsQuestion,
+             LineInSameLoopQuestion,
+             LineInSameConditionalQuestion
         ]
 
         generated_questions = []

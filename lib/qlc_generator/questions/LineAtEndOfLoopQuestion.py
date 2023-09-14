@@ -17,6 +17,10 @@ class LineAtEndOfLoopQuestion(Question):
             if not hasattr(AstUtil.get_lines(loop)[-1], "body"):
                 valid_loops.append(loop)
 
+        for loop in self.astUtil.getWhileNodes():
+            if not hasattr(AstUtil.get_lines(loop)[-1], "body"):
+                valid_loops.append(loop)
+
         # loop to quiz on
         self.node = random.choice(valid_loops)
 
@@ -30,12 +34,14 @@ class LineAtEndOfLoopQuestion(Question):
         # every line in the loop, except the last one
         for line in AstUtil.get_lines(self.node)[:-1]:
             lineText = decompile(line).partition("\n")[0]
-            distractorPool.append(Answer(lineText, False))
+            if lineText != self.correct_answer.get_answer_value:
+                distractorPool.append(Answer(lineText, False))
 
         parent = self.node.parent
         for line in AstUtil.get_lines(parent):
             lineText = decompile(line).partition("\n")[0]
-            distractorPool.append(Answer(lineText, False))
+            if lineText != self.correct_answer.get_answer_value:
+                distractorPool.append(Answer(lineText, False))
 
         self.distractor_pool = distractorPool
     

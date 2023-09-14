@@ -4,6 +4,7 @@ class AstUtil:
         self.functionDefNodes = []
         self.forNodes = []
         self.whileNodes = []
+        self.ifNodes = []
 
         self.nodes = {"functionDef": self.functionDefNodes, "for": self.forNodes, "while": self.whileNodes}
 
@@ -16,6 +17,9 @@ class AstUtil:
     def addWhileNode(self, node):
         self.whileNodes.append(node)
 
+    def addIfNode(self, node):
+        self.ifNodes.append(node)
+
     def getFunctionDefNodes(self):
         return self.functionDefNodes
     
@@ -24,6 +28,9 @@ class AstUtil:
     
     def getWhileNodes(self):
         return self.whileNodes
+    
+    def getIfNodes(self):
+        return self.ifNodes
 
     @staticmethod
     def get_parameter_list(node):

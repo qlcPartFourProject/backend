@@ -28,3 +28,8 @@ class Analyzer(ast.NodeTransformer):
         self.astUtil.addWhileNode(node)
         self.generic_visit(node)
         return node
+    
+    def visit_If(self, node):
+        self.astUtil.addIfNode(node)
+        self.generic_visit(node)
+        return node

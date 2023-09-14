@@ -26,7 +26,7 @@ db = firestore.client()
 
 # init flask server
 app = Flask(__name__, static_url_path='', static_folder='frontend/build')
-# CORS(app) #comment this on deployment
+CORS(app) #comment this on deployment
 api = Api(app)
 
 @app.route('/', defaults={'u_path': ''}, methods=["GET", "OPTIONS"])
