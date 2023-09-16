@@ -98,7 +98,7 @@ class AstUtil:
         for line in node.body:
             if line in self.forNodes or line in self.whileNodes:
                 loop_list.append(line)
-            elif hasattr(line, 'body'):
-                loop_list += AstUtil.get_function_call_list(line)
+            if hasattr(line, 'body'):
+                loop_list += self.get_loop_list(line)
 
         return loop_list
