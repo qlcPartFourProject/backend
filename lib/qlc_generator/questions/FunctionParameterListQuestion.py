@@ -13,7 +13,10 @@ class FunctionParameterListQuestion(Question):
         self.node =  random.choice(self.astUtil.getFunctionDefNodes())
     
     def generate_correct_answer(self):
-        self.correct_answer = Answer(AstUtil.get_parameter_list(self.node).__str__(), True)
+        if AstUtil.get_parameter_list(self.node):
+            self.correct_answer = Answer(AstUtil.get_parameter_list(self.node).__str__(), True)
+        else:
+            self.correct_answer = Answer("The function has no parameters.", True)
     
     def generate_distractors(self):
         distractorPool = []
@@ -23,14 +26,15 @@ class FunctionParameterListQuestion(Question):
 
         # variables associated with this function
         if AstUtil.get_variable_list(self.node):
-          distractorPool.append(Answer(AstUtil.get_variable_list(self.node).__str__(), False))
+            distractorPool.append(Answer(AstUtil.get_variable_list(self.node).__str__(), False))
 
         # parameter lists of other functions
         for function in self.astUtil.getFunctionDefNodes():
             if AstUtil.get_parameter_list(function):
-              if (AstUtil.get_parameter_list(function) != AstUtil.get_parameter_list(self.node)):
-                distractorPool.append(Answer(AstUtil.get_parameter_list(function).__str__(), False))
-
+                if (AstUtil.get_parameter_list(function) != AstUtil.get_parameter_list(self.node)):
+                    distractorPool.append(Answer(AstUtil.get_parameter_list(function).__str__(), False))
+        if AstUtil.get_parameter_list(self.node):
+            distractorPool.append(Answer("The function has no parameters.", False))
         self.distractor_pool = distractorPool
     
     def create_question_text(self):

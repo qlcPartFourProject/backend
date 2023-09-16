@@ -33,8 +33,8 @@ class FunctionVariableNameListQuestion(Question):
             if AstUtil.get_variable_list(function):
               if (AstUtil.get_variable_list(function) != AstUtil.get_variable_list(self.node)):
                 distractorPool.append(Answer(AstUtil.get_variable_list(function).__str__(), False))
-            if AstUtil.get_variable_list(self.node):
-                distractorPool.append(Answer("The function has no variables.", False))
+        if AstUtil.get_variable_list(self.node):
+            distractorPool.append(Answer("The function has no variables.", False))
         self.distractor_pool = distractorPool
     
     def create_question_text(self):
