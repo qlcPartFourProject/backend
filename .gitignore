@@ -105,6 +105,7 @@ celerybeat.pid
 .venv
 env/
 venv/
+.venv/
 ENV/
 env.bak/
 venv.bak/
@@ -131,3 +132,4 @@ dmypy.json
 qlcs-part-4-project-firebase-adminsdk-*-*.json
 
 temp/
+testing_code/
