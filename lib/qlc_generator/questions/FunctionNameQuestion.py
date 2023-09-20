@@ -17,7 +17,7 @@ class FunctionNameQuestion(Question):
     def generate_distractors(self):
         distractorPool = []
 
-        # parameter names and variable names associated with this function
+        # parameters and variable names associated with this function
         for parameter in AstUtil.get_parameter_list(self.node):
             distractorPool.append(Answer(parameter, False))
         for variable in AstUtil.get_variable_list(self.node):

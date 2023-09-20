@@ -38,4 +38,4 @@ class FunctionParameterListQuestion(Question):
         self.distractor_pool = distractorPool
     
     def create_question_text(self):
-        self.text = "Which are the parameter names of the function on line " + str(self.node.lineno) + "?"
+        self.text = "Which are the parameters of the function on line " + str(self.node.lineno) + "?"

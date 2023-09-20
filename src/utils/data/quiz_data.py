@@ -21,7 +21,7 @@ def all_quizzes():
                 Question(
                     _id = 1,
                     type = QuestionType.FUNCTION_PARAMETER_LIST,
-                    text = 'Which are the parameter names of the function on line <line no>?',
+                    text = 'Which are the parameters of the function on line <line no>?',
                     choices = [
                         Choice(_id = 0, text = 'p4, p5', is_correct = False),
                         Choice(_id = 1, text = 'p0, p3, p5', is_correct = False),
@@ -54,7 +54,7 @@ def all_quizzes():
                 Question(
                     _id = 4,
                     type = QuestionType.FUNCTION_PARAMETER_LIST,
-                    text = 'Which are the parameter names of the function on line <line no>?',
+                    text = 'Which are the parameters of the function on line <line no>?',
                     choices = [
                         Choice(_id = 0, text = 'f1, p1, v1', is_correct = False),
                         Choice(_id = 1, text = 'p2, p4, p6', is_correct = True),

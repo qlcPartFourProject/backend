@@ -143,4 +143,4 @@ class TestFunctionParameterListQuestion:
       question.node = tree.body[0]
       question.create_question_text()
 
-      assert question.text == "Which are the parameter names of the function on line 1?"
+      assert question.text == "Which are the parameters of the function on line 1?"
