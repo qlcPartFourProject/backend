@@ -4,7 +4,7 @@ from firebase_admin.firestore import SERVER_TIMESTAMP
 
 def add_feedback_results(feedback_submission: FeedbackSubmission):
     db = firestore.client()
-    new_submission_ref = db.collection('quizzes', feedback_submission.quiz_id, 'feedback' ).document()
+    new_submission_ref = db.collection('study_quizzes', feedback_submission.quiz_id, 'feedback' ).document()
 
     submission_data = {
         'created': SERVER_TIMESTAMP,
