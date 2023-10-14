@@ -1,17 +1,13 @@
 ### Backend Setup (local environment):
 
-## In bash
+## In a terminal, starting from the repo's folder:
 # If you don't have virtualenv installed (optional)
-pip install virtualenv 
-
-# From the repo's root dir, go into the backend folder:
-cd backend
+pip install virtualenv
 
 # Create the virtual environment (only do in first install)
 py -m venv .venv
 
 # Activate the virtual environment
-source .venv\scripts\activate
 .venv\scripts\activate
 
 ### In venv
@@ -27,10 +23,3 @@ Click Generate New Private Key, then confirm by clicking Generate Key.
 Add the following line to the .env file in the backend folder:
 ```FIREBASE_PRIVATE_KEY_PATH=path_to_generated_file```
 DO NOT store the generated file in this repository or push it to GitHub.
-
-
-### Backend Deployment
-
-# After pushing to GitHub and you want to update deployed server
-git push azure main:master
-
