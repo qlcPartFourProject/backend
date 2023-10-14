@@ -4,5 +4,5 @@ from src.utils.cors.response import _corsify_actual_response
 
 class TestController(Resource):
     def get(self):
-        return _corsify_actual_response(make_response({ 'status': 'Server is running... -- 20/09 @ 6:19pm' }, 200))
+        return _corsify_actual_response(make_response({ 'status': 'Server is running... -- 14/10 @ 10:15pm' }, 200))
     
