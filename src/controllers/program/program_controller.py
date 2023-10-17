@@ -6,7 +6,7 @@ from firebase_admin import storage, firestore
 class ProgramController(Resource):
     def get(self, id: str):
         db = firestore.client()
-        program_doc_ref= db.collection('programs').document(id)
+        program_doc_ref= db.collection('exhibition_day_programs').document(id)
         program = program_doc_ref.get().to_dict()
 
         # temporarily store file

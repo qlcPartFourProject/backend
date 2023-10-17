@@ -22,7 +22,7 @@ def create_program(filename, temp_file_path):
 
     db = firestore.client()
     author_doc_ref = db.collection('Users').document('QTo77wjVwQTAKIuzw5nX8VKKyTG3')
-    new_program_doc_ref= db.collection('programs').document()
+    new_program_doc_ref= db.collection('exhibition_day_programs').document()
     new_program_doc_ref.set({
         'author': author_doc_ref,
         'filename': filename,
